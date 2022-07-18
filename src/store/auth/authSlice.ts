@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { AxiosError } from 'axios'
 
 import { IAuth, IUser } from './authTypes'
 
@@ -22,9 +23,9 @@ const authSlice = createSlice({
       state.error = ''
       state.user = action.payload
     },
-    rejected(state, action: PayloadAction<Error>) {
+    rejected(state, action: PayloadAction<AxiosError>) {
       state.loading = false
-      state.error = action.payload.message
+      state.error = action.payload.response?.data as string
       state.user = null
     },
   },

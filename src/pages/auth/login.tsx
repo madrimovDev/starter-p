@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import {
+  Alert,
+  AlertIcon,
   Button,
   Flex,
   FormControl,
@@ -14,8 +16,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { login } from '../store/auth/authAction'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { login } from '../../store/auth/authAction'
 
 interface IFormInputs {
   username: string
@@ -34,7 +36,7 @@ const scheme = yup.object({
 })
 
 const Login = () => {
-  const { user } = useAppSelector((state) => state.auth)
+  const { user, loading, error } = useAppSelector((state) => state.auth)
   const dispatch = useAppDispatch()
   const {
     handleSubmit,
@@ -71,6 +73,12 @@ const Login = () => {
         w='full'
         maxW='md'
       >
+        {error && (
+          <Alert status='error' size='sx'>
+            <AlertIcon />
+            {error}
+          </Alert>
+        )}
         <FormControl isInvalid={Boolean(errors.username)}>
           <FormLabel>Username</FormLabel>
           <Input type='text' placeholder='exemple: teshavoy' {...register('username')} />
@@ -83,7 +91,7 @@ const Login = () => {
           <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
         </FormControl>
 
-        <Button type='submit' colorScheme='blue'>
+        <Button type='submit' colorScheme='blue' isLoading={loading}>
           Login
         </Button>
       </Flex>

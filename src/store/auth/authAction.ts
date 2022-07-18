@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios'
+
 import axios from '../../axios'
 import { AppDispatch } from '../'
 
@@ -15,7 +17,7 @@ export const login = ({ username, password }: ILogin) => {
       })
       dispatch(authActions.fulfilled(response.data as IUser))
     } catch (e) {
-      dispatch(authActions.rejected(e as Error))
+      dispatch(authActions.rejected(e as AxiosError))
     }
   }
 }
