@@ -6,7 +6,9 @@ import { Provider } from 'react-redux'
 
 import Routers from './routers'
 import theme from './config/themeConfig'
-import store from './store/store'
+import setupStore from './store'
+
+const store = setupStore()
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
