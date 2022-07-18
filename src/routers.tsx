@@ -1,7 +1,18 @@
+import { Route, Routes } from 'react-router-dom'
+
+import Homeworks from './pages/homeworks'
+import Login from './pages/auth/login'
+import RequireAuth from './pages/auth/requireAuth'
+
 const Routers = () => {
   return (
     <>
-      <div className=''></div>
+      <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route element={<RequireAuth />}>
+          <Route path='/' element={<Homeworks />} />
+        </Route>
+      </Routes>
     </>
   )
 }
