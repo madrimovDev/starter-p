@@ -1,0 +1,34 @@
+{
+  "extends": ["react-app", "react-app/jest", "prettier"],
+  "rules": {
+    "no-var": "error",
+    "camelcase": [
+      "error",
+      {
+        "ignoreDestructuring": true,
+        "ignoreImports": true
+      }
+    ],
+    "no-console": "warn",
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "semi": ["error", "never"],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ]
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"]
+}
