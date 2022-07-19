@@ -1,0 +1,100 @@
+{
+  "homeworks": [
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": false,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": true,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": false,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": false,
+      "date": "19-07-2022",
+      "rate": 5
+    },
+    {
+      "userId": "123",
+      "title": "Homework",
+      "description": "Lorem Ipsum Dolar Sit",
+      "isActive": false,
+      "date": "19-07-2022",
+      "rate": 5
+    }
+  ]
+}

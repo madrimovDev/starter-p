@@ -5,6 +5,7 @@ export interface IAuth {
 } 
 
 export interface IUser {
+  userId:  string,
   name: string,
   surname: string,
   username: string,

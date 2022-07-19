@@ -2,9 +2,11 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import thunk from 'redux-thunk'
 
 import authSlice from './auth/authSlice'
+import homeworksSlice from './homeworks/homeworksSlice'
 
 const rootReducer = combineReducers({
   auth: authSlice,
+  homeworks: homeworksSlice
 })
 
 const setupStore = () =>

@@ -1,7 +1,15 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>
+import Navigation from '../components/navigation'
+
+const MainLayout = () => {
+  return (
+    <>
+      <Navigation />
+      <Outlet />
+    </>
+  )
 }
 
 export default MainLayout
