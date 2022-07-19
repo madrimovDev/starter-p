@@ -2,7 +2,7 @@ const jsonServer = require('json-server')
 const server = jsonServer.create()
 const middlewares = jsonServer.defaults()
 
-const { user } = require('./user.json')
+const { user, jwt } = require('./user.json')
 
 server.use(middlewares)
 server.use(jsonServer.bodyParser)
@@ -21,16 +21,42 @@ server.post('/login', (req, res) => {
     }
 
     res.status(200).json({
-      name: user.name,
-      surname: user.surnname,
-      username: user.username,
-      group: user.group,
-      direction: user.direction,
-      rating: user.rating,
+      user: {
+        name: user.name,
+        surname: user.surnname,
+        username: user.username,
+        group: user.group,
+        direction: user.direction,
+        rating: user.rating,
+      },
+      jwt: jwt,
     })
   }, 1500)
 })
 
+server.post('/login/jwt', (req, res) => {
+  let { jwtToken } = req.body
+
+  setTimeout(() => {
+    if (jwt !== jwtToken) {
+      res.status(401).json('The token is not compatible')
+      return
+    }
+
+    res.json({
+      user: {
+        name: user.name,
+        surname: user.surnname,
+        username: user.username,
+        group: user.group,
+        direction: user.direction,
+        rating: user.rating,
+      },
+      jwt: jwt,
+    })
+  }, 2500)
+})
+
 server.listen(8880, () => {
-  console.log('JSON Server is running')
+  console.log('JSON Server is running on http://localhost:8880')
 })
