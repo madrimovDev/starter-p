@@ -5,6 +5,7 @@ export interface IAuth {
 } 
 
 export interface IUser {
+  userId:  string,
   name: string,
   surname: string,
   username: string,
@@ -16,4 +17,9 @@ export interface IUser {
 export interface ILogin {
   username: string,
   password: string
+}
+
+export interface ResponseData {
+  user: IUser,
+  jwt: string
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 import {
   Alert,
@@ -17,7 +17,8 @@ import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { login } from '../../store/auth/authAction'
+import { jwtLogin, login } from '../../store/auth/authAction'
+import { getToken } from '../../utils/localStorage'
 
 interface IFormInputs {
   username: string
@@ -44,10 +45,18 @@ const Login = () => {
     formState: { errors },
   } = useForm<IFormInputs>({ resolver: yupResolver(scheme) })
 
+
   const onSubmit = (data: IFormInputs) => {
     dispatch<any>(login(data))
   }
 
+    useLayoutEffect(() => {
+      const jwt = getToken()
+      if (jwt) {
+        dispatch<any>(jwtLogin(jwt))
+      }
+    }, [dispatch])
+  
   if (user) {
     return <Navigate to='/' replace />
   }
