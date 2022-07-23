@@ -3,12 +3,16 @@ export interface IHomework {
   title: string
   description: string
   isActive: boolean
-  date: string
+  date: Date
   rate: number
 }
 
-export interface IHomeworks {
+export interface IResponseData {
+  data: IHomework[]
+  title: string
+}
+export interface IState {
   loading: boolean
   error: string
-  homeworks: IHomework[] | []
+  data: IHomework[] | null
 }

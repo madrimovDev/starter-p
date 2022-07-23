@@ -29,7 +29,7 @@ const Profile = () => {
         <Avatar />
       </MenuButton>
       <MenuList>
-        <MenuGroup title={user?.name}>
+        <MenuGroup title={`${user?.name} ${user?.surname}`}>
           <MenuItem>Account</MenuItem>
           <MenuItem>Settings</MenuItem>
           <MenuItem>Logout</MenuItem>

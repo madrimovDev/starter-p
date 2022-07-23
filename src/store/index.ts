@@ -2,11 +2,17 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import thunk from 'redux-thunk'
 
 import authSlice from './auth/authSlice'
-import homeworksSlice from './homeworks/homeworksSlice'
+import actualHomeworksSlice from './homeworks/slices/actualHomeworksSlice'
+import nextHomeworksSlice from './homeworks/slices/nextHomeworksSlice'
+import prevHomeworksSlice from './homeworks/slices/prevHomeworksSlice'
 
 const rootReducer = combineReducers({
   auth: authSlice,
-  homeworks: homeworksSlice
+  homeworks: combineReducers({
+    actualHomeworks: actualHomeworksSlice,
+    prevHomeworks: prevHomeworksSlice,
+    nextHomeworks: nextHomeworksSlice,
+  }),
 })
 
 const setupStore = () =>

@@ -30,15 +30,13 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "dev": "concurrently \"yarn start\" \"yarn run server\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx ./src/**/*",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc",
-    "server": "node ./server/server.js"
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc"
   },
   "browserslist": {
     "production": [
@@ -53,12 +51,9 @@
     ]
   },
   "devDependencies": {
-    "body-parser": "^1.20.0",
-    "cors": "^2.8.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "express": "^4.18.1",
     "json-server": "^0.17.0",
     "prettier": "^2.7.1",
     "react-icons": "^4.4.0"

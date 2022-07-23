@@ -11,7 +11,7 @@ export const login = ({ username, password }: ILogin) => {
   return async (dispatch: AppDispatch) => {
     try {
       dispatch(authActions.pending())
-      const response = await axios.post<ResponseData>('/login', {
+      const response = await axios.post<ResponseData>('/auth/login', {
         username,
         password,
       })
@@ -27,8 +27,8 @@ export const jwtLogin = (jwt: string) => {
   return async (dispatch: AppDispatch) => {
     try {
       dispatch(authActions.pending())
-      const response = await axios.post<ResponseData>('/login/jwt', {
-        jwtToken: jwt,
+      const response = await axios.post<ResponseData>('/auth/login/jwt', {
+        token: jwt,
       })
       setToken(response.data.jwt)
       dispatch(authActions.fulfilled(response.data.user))
